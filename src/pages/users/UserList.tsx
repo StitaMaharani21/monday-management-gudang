@@ -6,7 +6,6 @@ import React from "react";
 
 const UserList = () => {
   const { data: users, isPending } = useFetchUsers();
-  const { mutate: deleteUser } = useDeleteUser();
 
   if (!users) return <p>not found users...</p>;
   if (isPending) return <p>Loading users...</p>;
