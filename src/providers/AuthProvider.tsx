@@ -49,6 +49,7 @@ export const AuthProvider = ({ children }: AuthProviderProps) => {
     try {
       const userData = await authService.login(email, password);
       setUser(userData);
+      return userData;
     } catch (error) {
       console.error("Login error:", error);
       throw error;
