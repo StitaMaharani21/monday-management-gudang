@@ -13,6 +13,8 @@ const Profile = () => {
     navigate("/login");
   };
 
+  if (!user) return <div>Loading...</div>;
+
   return (
     <div className="flex flex-col items-center">
       <h2>Profile</h2>
@@ -20,7 +22,7 @@ const Profile = () => {
       <p>Name: {user.name}</p>
       <p>
         Role:{" "}
-        {user.roles?.map((role) => role.name).join(", ") || "N/A"}
+        {user.roles?.map((role) => typeof role === "string" ? role : role.name).join(", ") || "N/A"}
       </p>
       <p>Email: {user.email}</p>
       <p>Phone: {user.phone || "N/A"}</p>

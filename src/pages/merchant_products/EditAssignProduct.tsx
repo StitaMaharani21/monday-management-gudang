@@ -25,10 +25,10 @@ const EditAssignProduct = () => {
     Number(merchantId)
   );
   
-  const { data: product, isLoading: loadingProduct } = useFetchProduct(
+  const { data: product } = useFetchProduct(
     Number(productId)
   );
-  const { mutate: updateStock, isPending, error } = useUpdateMerchantProduct();
+  const { mutate: updateStock } = useUpdateMerchantProduct();
 
   const merchantProduct = merchant?.products?.find(
     (product) => product.id === Number(productId)
@@ -36,7 +36,7 @@ const EditAssignProduct = () => {
 
   const warehouseId = merchantProduct?.pivot?.warehouse_id;
 
-  const { data: warehouse, isLoading: loadingWarehouse } = useFetchWarehouse(
+  const { data: warehouse } = useFetchWarehouse(
     Number(warehouseId)
   );
 

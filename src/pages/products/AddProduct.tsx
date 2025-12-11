@@ -27,11 +27,18 @@ const AddProduct = () => {
     setError,
     setValue,
     formState: { errors },
-  } = useForm<ProductFormData>({
+  } = useForm({
     resolver: zodResolver(productSchema),
+    defaultValues: {
+      name: "",
+      about: "",
+      price: 0,
+      category_id: 0,
+      is_popular: false,
+    }
   });
 
-  const onSubmit = (data: ProductFormData) => {
+  const onSubmit = (data: any) => {
     setError("root", { type: "server", message: "" });
 
     createProduct(data, {

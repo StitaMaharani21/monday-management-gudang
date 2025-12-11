@@ -29,8 +29,15 @@ const EditProduct = () => {
     setError,
     setValue,
     formState: { errors },
-  } = useForm<ProductFormData>({
+  } = useForm({
     resolver: zodResolver(productSchema),
+    defaultValues: {
+      name: "",
+      about: "",
+      price: 0,
+      category_id: 0,
+      is_popular: false,
+    }
   });
 
   useEffect(() => {
