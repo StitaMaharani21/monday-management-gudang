@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Sidebar from "../../components/Sidebar";
-import { useFetchUsers, useDeleteUser } from "../../hooks/useUsers";
+import { useFetchUsers } from "../../hooks/useUsers";
 import UserProfileCard from "../../components/UserProfileCard";
 import React from "react";
 
