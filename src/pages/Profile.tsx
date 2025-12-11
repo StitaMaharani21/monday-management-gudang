@@ -22,7 +22,7 @@ const Profile = () => {
       <p>Name: {user.name}</p>
       <p>
         Role:{" "}
-        {user.roles?.map((role) => typeof role === "string" ? role : role.name).join(", ") || "N/A"}
+        {user.roles?.map((role: any) => typeof role === "string" ? role : role.name).join(", ") || "N/A"}
       </p>
       <p>Email: {user.email}</p>
       <p>Phone: {user.phone || "N/A"}</p>

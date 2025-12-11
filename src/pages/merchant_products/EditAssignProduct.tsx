@@ -97,7 +97,7 @@ const EditAssignProduct = () => {
     );
   };
 
-  if (loadingMerchant || loadingProduct) return <p>Loading details...</p>;
+  if (loadingMerchant) return <p>Loading details...</p>;
   if (!merchant) return <p> merchant not found...</p>;
   if (!product) return <p> product not found...</p>;
   if (!warehouse) return <p> warehouse not found...</p>;

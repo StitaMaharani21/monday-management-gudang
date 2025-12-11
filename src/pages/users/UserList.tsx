@@ -1,19 +1,12 @@
 import { Link } from "react-router-dom";
 import Sidebar from "../../components/Sidebar";
 import { useFetchUsers, useDeleteUser } from "../../hooks/useUsers";
-import { User } from "../../types/types";
 import UserProfileCard from "../../components/UserProfileCard";
 import React from "react";
 
 const UserList = () => {
   const { data: users, isPending } = useFetchUsers();
   const { mutate: deleteUser } = useDeleteUser();
-
-  const handleDelete = (id: number) => {
-    if (window.confirm("Are you sure you want to delete this user?")) {
-      deleteUser(id);
-    }
-  };
 
   if (!users) return <p>not found users...</p>;
   if (isPending) return <p>Loading users...</p>;
