@@ -1,7 +1,7 @@
 import axios from "axios";
 
 // Resolve API base from env (expects .../api)
-const API_BASE = import.meta.env.VITE_API_URL || "http://localhost:8000/api";
+const API_BASE = (import.meta.env.VITE_API_URL || "http://localhost:8000/api").trim();
 
 const apiClient = axios.create({
   baseURL: API_BASE,
