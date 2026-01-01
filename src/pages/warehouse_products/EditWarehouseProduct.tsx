@@ -8,6 +8,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { editAssignWarehouseProduct, EditAssignWarehouseProductFormData } from "../../schemas/editAssignWarehouseProduct";
 import Sidebar from "../../components/Sidebar";
 import UserProfileCard from "../../components/UserProfileCard";
+import { getImageUrl } from "../../utils/imageHelper";
 
 const EditWarehouseProduct = () => {
   const { warehouseId, productId } = useParams<{ warehouseId: string; productId: string }>();
@@ -116,7 +117,7 @@ const EditWarehouseProduct = () => {
               <div className="flex items-center gap-3">
                 <div className="flex size-16 rounded-2xl bg-monday-background items-center justify-center overflow-hidden">
                   <img
-                    src={warehouse.photo}
+                    src={getImageUrl(warehouse.photo)}
                     className="size-full object-cover"
                     alt="icon"
                   />
@@ -137,7 +138,7 @@ const EditWarehouseProduct = () => {
               <div className="flex items-center gap-3">
                 <div className="flex size-16 rounded-2xl bg-monday-background items-center justify-center overflow-hidden">
                   <img
-                    src={product.thumbnail}
+                    src={getImageUrl(product.thumbnail)}
                     className="size-full object-contain"
                     alt="icon"
                   />

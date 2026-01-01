@@ -1,6 +1,7 @@
 import { useTransaction } from "../../../context/TransactionContext";
 import { useMyMerchantProfile } from "../../../hooks/useMerchants";
 import { useCreateTransaction } from "../../../hooks/useTransactions";
+import { getImageUrl } from "../../../utils/imageHelper";
 
 const StepThree = ({ handlePrevStep }: { handlePrevStep: () => void }) => {
   const { transaction, cart } = useTransaction();
@@ -50,7 +51,7 @@ const StepThree = ({ handlePrevStep }: { handlePrevStep: () => void }) => {
           <div className="flex items-center gap-3 w-[316px] shrink-0">
             <div className="flex size-[86px] rounded-2xl bg-monday-background items-center justify-center overflow-hidden">
               <img
-                src={product.thumbnail}
+                src={getImageUrl(product.thumbnail)}
                 className="size-full object-contain"
                 alt="icon"
               />
@@ -98,7 +99,7 @@ const StepThree = ({ handlePrevStep }: { handlePrevStep: () => void }) => {
       <div className="flex w-[392px] shrink-0 h-fit rounded-3xl p-[18px] gap-3 bg-white">
         <div className="flex size-16 rounded-2xl bg-monday-background items-center justify-center overflow-hidden">
           <img
-            src={merchant.photo}
+            src={getImageUrl(merchant.photo)}
             className="size-full object-contain"
             alt="icon"
           />

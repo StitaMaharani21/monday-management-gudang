@@ -3,6 +3,7 @@ import Sidebar from "../../components/Sidebar";
 import { useFetchTransaction } from "../../hooks/useTransactions";
 import UserProfileCard from "../../components/UserProfileCard";
 import { useMyMerchantProfile } from "../../hooks/useMerchants";
+import { getImageUrl } from "../../utils/imageHelper";
 
 const TransactionDetails = () => {
   const { id } = useParams<{ id: string }>(); // Get transaction ID from URL
@@ -74,7 +75,7 @@ const TransactionDetails = () => {
       >
         <div className="flex size-16 rounded-2xl bg-monday-background items-center justify-center overflow-hidden">
           <img
-            src={merchant.photo}
+            src={getImageUrl(merchant.photo)}
             className="size-full object-contain"
             alt="icon"
           />
@@ -116,7 +117,7 @@ const TransactionDetails = () => {
                 <div className="flex items-center gap-3 w-[316px] shrink-0">
                   <div className="flex size-[86px] rounded-2xl bg-monday-background items-center justify-center overflow-hidden">
                     <img
-                      src={item.product.thumbnail}
+                      src={getImageUrl(item.product.thumbnail)}
                       className="size-full object-contain"
                       alt="icon"
                     />

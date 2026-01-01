@@ -9,6 +9,7 @@ import { useFetchProducts } from "../../hooks/useProducts";
 import { useAssignWarehouseProduct } from "../../hooks/useWarehouseProducts";
 import { ApiErrorResponse, AssignWarehouseProductPayload } from "../../types/types";
 import UserProfileCard from "../../components/UserProfileCard";
+import { getImageUrl } from "../../utils/imageHelper";
 
 const AssignWarehouseProduct = () => {
   const { id } = useParams<{ id: string }>(); // Get warehouse ID from URL
@@ -125,7 +126,7 @@ const AssignWarehouseProduct = () => {
             <div className="flex items-center gap-3">
               <div className="flex size-16 rounded-2xl bg-monday-background items-center justify-center overflow-hidden">
                 <img
-                  src={warehouse.photo}
+                  src={getImageUrl(warehouse.photo)}
                   className="size-full object-cover"
                   alt="icon"
                 />

@@ -2,6 +2,7 @@
 
 import { Link, useNavigate } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth";
+import { getImageUrl } from "../utils/imageHelper";
 
 const Profile = () => {
   const { user, logout } = useAuth();
@@ -18,7 +19,7 @@ const Profile = () => {
   return (
     <div className="flex flex-col items-center">
       <h2>Profile</h2>
-      <img src={user.photo} alt={user.name} width={100} />
+      <img src={getImageUrl(user.photo)} alt={user.name} width={100} />
       <p>Name: {user.name}</p>
       <p>
         Role:{" "}

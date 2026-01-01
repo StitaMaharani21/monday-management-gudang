@@ -1,6 +1,7 @@
 // components/UserProfileCard.tsx
 import { useNavigate } from "react-router-dom";
 import { useAuth } from "../hooks/useAuth";
+import { getImageUrl } from "../utils/imageHelper";
 
 const UserProfileCard = () => {
   const { user, logout } = useAuth();
@@ -16,7 +17,7 @@ const UserProfileCard = () => {
   return (
     <div className="flex items-center gap-3 h-[92px] bg-white w-fit rounded-3xl p-[18px]">
       <div className="flex rounded-full overflow-hidden size-14">
-        <img src={user?.photo} className="size-full object-cover" alt="photo" />
+        <img src={getImageUrl(user?.photo)} className="size-full object-cover" alt="photo" />
       </div>
       <div className="flex flex-col gap-1 min-w-[120px] max-w-[160px] w-fit">
         <p className="font-semibold">{user?.name}</p>

@@ -1,5 +1,6 @@
 import React from "react";
 import { useTransaction } from "../../../context/TransactionContext";
+import { getImageUrl } from "../../../utils/imageHelper";
 
 const StepTwo = ({
   handleNextStep,
@@ -66,7 +67,7 @@ const StepTwo = ({
                     <div className="flex items-center gap-3 w-[340px] shrink-0">
                       <div className="flex size-[86px] rounded-2xl bg-monday-background items-center justify-center overflow-hidden">
                         <img
-                          src={product.thumbnail}
+                          src={getImageUrl(product.thumbnail)}
                           className="size-full object-contain"
                           alt="icon"
                         />

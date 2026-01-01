@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useTransaction } from "../../../context/TransactionContext";
 import { useMyMerchantProfile } from "../../../hooks/useMerchants";
+import { getImageUrl } from "../../../utils/imageHelper";
 
 const ProductModal = ({
   isOpen,
@@ -99,7 +100,7 @@ const ProductModal = ({
                 <div className="flex items-center gap-3 w-[270px] shrink-0">
                   <div className="flex size-[86px] rounded-2xl bg-monday-background items-center justify-center overflow-hidden">
                     <img
-                      src={product.thumbnail}
+                      src={getImageUrl(product.thumbnail)}
                       className="size-full object-contain"
                       alt="icon"
                     />
@@ -115,7 +116,7 @@ const ProductModal = ({
                 </div>
                 <div className="flex items-center gap-[6px] w-[154px] shrink-0">
                   <img
-                    src={product.category.photo}
+                    src={getImageUrl(product.category.photo)}
                     className="size-6 flex shrink-0"
                     alt="icon"
                   />

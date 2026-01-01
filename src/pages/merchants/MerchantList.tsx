@@ -3,6 +3,7 @@ import Sidebar from "../../components/Sidebar";
 import { useFetchMerchants } from "../../hooks/useMerchants";
 import UserProfileCard from "../../components/UserProfileCard";
 import React from "react";
+import { getImageUrl } from "../../utils/imageHelper";
 
 const MerchantList = () => {
   const { data: merchants, isPending, isError, error } = useFetchMerchants(); // ✅ Use `isPending`
@@ -107,7 +108,7 @@ const MerchantList = () => {
                         <div className="flex items-center gap-3 w-[326px] shrink-0">
                           <div className="flex size-[86px] rounded-2xl bg-monday-background items-center justify-center overflow-hidden">
                             <img
-                              src={merchant.photo}
+                              src={getImageUrl(merchant.photo)}
                               className="size-full object-contain"
                               alt="icon"
                             />

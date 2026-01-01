@@ -3,6 +3,7 @@ import Sidebar from "../../components/Sidebar";
 import { useFetchCategories } from "../../hooks/useCategories";
 import React from "react"; 
 import UserProfileCard from "../../components/UserProfileCard";
+import { getImageUrl } from "../../utils/imageHelper";
 
 const CategoryList = () => { 
   const { data: categories, isPending, isError, error } = useFetchCategories();
@@ -112,7 +113,7 @@ const CategoryList = () => {
                         <div className="flex w-full items-center gap-3">
                           <div className="flex size-16 rounded-full bg-monday-background items-center justify-center overflow-hidden">
                             <img
-                              src={category.photo}
+                              src={getImageUrl(category.photo)}
                               className="size-[30px] object-contain"
                               alt="icon"
                             />

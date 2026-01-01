@@ -9,6 +9,7 @@ import { MerchantFormData, merchantSchema } from "../../schemas/merchantSchema";
 import { AxiosError } from "axios";
 import { ApiErrorResponse } from "../../types/types";
 import UserProfileCard from "../../components/UserProfileCard";
+import { getImageUrl } from "../../utils/imageHelper";
 
 const EditMerchant = () => {
   const { id } = useParams<{ id: string }>();
@@ -45,7 +46,7 @@ const EditMerchant = () => {
         setValue("address", merchant.address);
         setValue("keeper_id", merchant.keeper_id);
         if (merchant.photo) {
-          setImagePreview(merchant.photo);  
+          setImagePreview(getImageUrl(merchant.photo));  
         } 
     }
   }, [merchant, setValue]); 

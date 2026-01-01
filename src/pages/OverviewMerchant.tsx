@@ -4,6 +4,7 @@ import { useFetchMerchantTransactions } from "../hooks/useTransactions";
 import UserProfileCard from "../components/UserProfileCard";
 import React, { useState } from "react";
 import { useFetchProduct } from "../hooks/useProducts";
+import { getImageUrl } from "../utils/imageHelper";
 
 const OverviewMerchant = () => {
   const { user } = useAuth();
@@ -225,7 +226,7 @@ const OverviewMerchant = () => {
                                 <div className="flex items-center gap-3 w-full">
                                   <div className="flex size-[86px] rounded-2xl bg-monday-background items-center justify-center overflow-hidden">
                                     <img
-                                      src={tp.product.thumbnail}
+                                      src={getImageUrl(tp.product.thumbnail)}
                                       className="size-full object-contain"
                                       alt="icon"
                                     />
@@ -327,7 +328,7 @@ const OverviewMerchant = () => {
                 <div className="flex flex-col gap-2">
                   <p className="flex items-center gap-[6px] font-semibold text-lg">
                     <img
-                      src={selectedProduct.category.photo}
+                      src={getImageUrl(selectedProduct.category.photo)}
                       className="size-6 flex shrink-0"
                       alt="icon"
                     />
@@ -342,7 +343,7 @@ const OverviewMerchant = () => {
                 </div>
                 <div className="flex size-[100px] rounded-2xl bg-monday-gray-background items-center justify-center overflow-hidden">
                   <img
-                    src={selectedProduct.thumbnail}
+                    src={getImageUrl(selectedProduct.thumbnail)}
                     className="size-full object-contain"
                     alt="icon"
                   />

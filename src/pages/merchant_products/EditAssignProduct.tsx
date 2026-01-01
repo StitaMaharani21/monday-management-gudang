@@ -14,6 +14,7 @@ import { AxiosError } from "axios";
 import { ApiErrorResponse } from "../../types/types";
 import UserProfileCard from "../../components/UserProfileCard";
 import { useFetchWarehouse } from "../../hooks/useWarehouses";
+import { getImageUrl } from "../../utils/imageHelper";
 
 const EditAssignProduct = () => {
   const { merchantId, productId } = useParams<{
@@ -167,7 +168,7 @@ const EditAssignProduct = () => {
               <div className="flex items-center gap-3">
                 <div className="flex size-16 rounded-2xl bg-monday-background items-center justify-center overflow-hidden">
                   <img
-                    src={warehouse.photo}
+                    src={getImageUrl(warehouse.photo)}
                     className="size-full object-cover"
                     alt="icon"
                   />
@@ -194,7 +195,7 @@ const EditAssignProduct = () => {
               <div className="flex items-center gap-3">
                 <div className="flex size-16 rounded-2xl bg-monday-background items-center justify-center overflow-hidden">
                   <img
-                    src={merchant.photo}
+                    src={getImageUrl(merchant.photo)}
                     className="size-full object-cover"
                     alt="icon"
                   />
@@ -215,7 +216,7 @@ const EditAssignProduct = () => {
               <div className="flex items-center gap-3">
                 <div className="flex size-16 rounded-2xl bg-monday-background items-center justify-center overflow-hidden">
                   <img
-                    src={product.thumbnail}
+                    src={getImageUrl(product.thumbnail)}
                     className="size-full object-contain"
                     alt="icon"
                   />

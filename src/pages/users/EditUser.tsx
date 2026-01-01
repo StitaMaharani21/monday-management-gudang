@@ -8,6 +8,7 @@ import { UserFormData, userSchema } from "../../schemas/userSchema";
 import { AxiosError } from "axios";
 import { ApiErrorResponse } from "../../types/types";
 import UserProfileCard from "../../components/UserProfileCard";
+import { getImageUrl } from "../../utils/imageHelper";
 
 const EditUser = () => {
   const { id } = useParams<{ id: string }>();
@@ -35,7 +36,7 @@ const EditUser = () => {
       setValue("phone", user.phone);
       setValue("email", user.email);
       if (user.photo) {
-        setImagePreview(user.photo);  
+        setImagePreview(getImageUrl(user.photo));  
       }
     }
   }, [user, setValue]);

@@ -4,6 +4,7 @@ import Sidebar from "../../components/Sidebar";
 import React, { useState } from "react";
 import { useFetchProduct } from "../../hooks/useProducts";
 import UserProfileCard from "../../components/UserProfileCard";
+import { getImageUrl } from "../../utils/imageHelper";
 
 const MerchantProductList = () => {
   const { id } = useParams<{ id: string }>(); // Get Merchant ID from URL
@@ -82,7 +83,7 @@ const MerchantProductList = () => {
             >
               <div className="flex size-16 rounded-2xl bg-monday-background items-center justify-center overflow-hidden">
                 <img
-                  src={merchant.photo}
+                  src={getImageUrl(merchant.photo)}
                   className="size-full object-contain"
                   alt="icon"
                 />
@@ -168,7 +169,7 @@ const MerchantProductList = () => {
                           <div className="flex items-center gap-3 w-[260px] shrink-0">
                             <div className="flex size-[86px] rounded-2xl bg-monday-background items-center justify-center overflow-hidden">
                               <img
-                                src={product.thumbnail}
+                                src={getImageUrl(product.thumbnail)}
                                 className="size-full object-contain"
                                 alt="icon"
                               />
@@ -194,7 +195,7 @@ const MerchantProductList = () => {
                           </div>
                           <div className="flex items-center gap-[6px] w-[154px] shrink-0">
                             <img
-                              src={product.category.photo}
+                              src={getImageUrl(product.category.photo)}
                               className="size-6 flex shrink-0"
                               alt="icon"
                             />
@@ -268,7 +269,7 @@ const MerchantProductList = () => {
                 <div className="flex flex-col gap-2">
                   <p className="flex items-center gap-[6px] font-semibold text-lg">
                     <img
-                      src={selectedProduct.category.photo}
+                      src={getImageUrl(selectedProduct.category.photo)}
                       className="size-6 flex shrink-0"
                       alt="icon"
                     />
@@ -283,7 +284,7 @@ const MerchantProductList = () => {
                 </div>
                 <div className="flex size-[100px] rounded-2xl bg-monday-gray-background items-center justify-center overflow-hidden">
                   <img
-                    src={selectedProduct.thumbnail}
+                    src={getImageUrl(selectedProduct.thumbnail)}
                     className="size-full object-contain"
                     alt="icon"
                   />

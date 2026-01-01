@@ -3,6 +3,7 @@ import Sidebar from "../../components/Sidebar";
 import { useFetchWarehouses } from "../../hooks/useWarehouses";
 import UserProfileCard from "../../components/UserProfileCard";
 import React from "react";
+import { getImageUrl } from "../../utils/imageHelper";
 
 const WarehouseList = () => {
   const { data: warehouses, isPending, isError, error } = useFetchWarehouses();
@@ -110,7 +111,7 @@ const WarehouseList = () => {
                         <div className="flex items-center gap-3 w-[360px] shrink-0">
                           <div className="flex size-[86px] rounded-2xl bg-monday-background items-center justify-center overflow-hidden">
                             <img
-                              src={warehouse.photo}
+                              src={getImageUrl(warehouse.photo)}
                               className="size-full object-contain"
                               alt="icon"
                             />

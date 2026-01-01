@@ -3,6 +3,7 @@ import Sidebar from "../../components/Sidebar";
 import { useFetchUsers } from "../../hooks/useUsers";
 import UserProfileCard from "../../components/UserProfileCard";
 import React from "react";
+import { getImageUrl } from "../../utils/imageHelper";
 
 const UserList = () => {
   const { data: users, isPending } = useFetchUsers();
@@ -103,7 +104,7 @@ const UserList = () => {
                         <div className="flex items-center gap-3">
                           <div className="flex size-[76px] rounded-full bg-monday-background items-center justify-center overflow-hidden">
                             <img
-                              src={user.photo}
+                              src={getImageUrl(user.photo)}
                               className="size-full object-cover"
                               alt="icon"
                             />

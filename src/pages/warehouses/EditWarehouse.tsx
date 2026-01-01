@@ -13,6 +13,7 @@ import {
 } from "../../schemas/warehouseSchema";
 import { AxiosError } from "axios";
 import { ApiErrorResponse } from "../../types/types";
+import { getImageUrl } from "../../utils/imageHelper";
 import UserProfileCard from "../../components/UserProfileCard";
 
 const EditWarehouse = () => {
@@ -46,7 +47,7 @@ const EditWarehouse = () => {
       setValue("phone", warehouse.phone);
       setValue("address", warehouse.address);
       if (warehouse.photo) {
-        setImagePreview(warehouse.photo);  
+        setImagePreview(getImageUrl(warehouse.photo));  
       }
     }
   }, [warehouse, setValue]);

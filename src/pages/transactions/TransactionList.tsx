@@ -6,6 +6,7 @@ import UserProfileCard from "../../components/UserProfileCard";
 import { useMyMerchantProfile } from "../../hooks/useMerchants";
 import React, { useState } from "react";
 import { useFetchProduct } from "../../hooks/useProducts";
+import { getImageUrl } from "../../utils/imageHelper";
 
 const TransactionList = () => {
   const { user } = useAuth();
@@ -86,7 +87,7 @@ const TransactionList = () => {
             >
               <div className="flex size-16 rounded-2xl bg-monday-background items-center justify-center overflow-hidden">
                 <img
-                  src={merchant?.photo}
+                  src={getImageUrl(merchant?.photo)}
                   className="size-full object-contain"
                   alt="icon"
                 />
@@ -217,7 +218,7 @@ const TransactionList = () => {
                                   <div className="flex items-center gap-3 w-[420px] shrink-0">
                                     <div className="flex size-[86px] rounded-2xl bg-monday-background items-center justify-center overflow-hidden">
                                       <img
-                                        src={tp.product.thumbnail}
+                                        src={getImageUrl(tp.product.thumbnail)}
                                         className="size-full object-contain"
                                         alt="icon"
                                       />
@@ -236,7 +237,7 @@ const TransactionList = () => {
                                   </div>
                                   <div className="flex items-center gap-[6px] w-full justify-center">
                                     <img
-                                      src={tp.product.category.photo}
+                                      src={getImageUrl(tp.product.category.photo)}
                                       className="size-6 flex shrink-0"
                                       alt="icon"
                                     />
@@ -320,7 +321,7 @@ const TransactionList = () => {
                 <div className="flex flex-col gap-2">
                   <p className="flex items-center gap-[6px] font-semibold text-lg">
                     <img
-                      src={selectedProduct.category.photo}
+                      src={getImageUrl(selectedProduct.category.photo)}
                       className="size-6 flex shrink-0"
                       alt="icon"
                     />
@@ -335,7 +336,7 @@ const TransactionList = () => {
                 </div>
                 <div className="flex size-[100px] rounded-2xl bg-monday-gray-background items-center justify-center overflow-hidden">
                   <img
-                    src={selectedProduct.thumbnail}
+                    src={getImageUrl(selectedProduct.thumbnail)}
                     className="size-full object-contain"
                     alt="icon"
                   />

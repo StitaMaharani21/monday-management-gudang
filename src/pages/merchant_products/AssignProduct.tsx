@@ -13,6 +13,7 @@ import { AxiosError } from "axios";
 import { useAssignProduct } from "../../hooks/useMerchantProducts";
 import { ApiErrorResponse, AssignProductPayload } from "../../types/types";
 import UserProfileCard from "../../components/UserProfileCard";
+import { getImageUrl } from "../../utils/imageHelper";
 
 const AssignProduct = () => {
   const { id } = useParams<{ id: string }>(); // Get merchant ID from URL
@@ -139,7 +140,7 @@ const AssignProduct = () => {
                 <div className="flex items-center gap-3">
                   <div className="flex size-16 rounded-2xl bg-monday-background items-center justify-center overflow-hidden">
                     <img
-                      src={merchant.photo}
+                      src={getImageUrl(merchant.photo)}
                       className="size-full object-cover"
                       alt="icon"
                     />

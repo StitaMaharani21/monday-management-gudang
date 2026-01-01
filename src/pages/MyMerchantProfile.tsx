@@ -3,6 +3,7 @@ import { useFetchProduct } from "../hooks/useProducts";
 import Sidebar from "../components/Sidebar";
 import { useMyMerchantProfile } from "../hooks/useMerchants";
 import UserProfileCard from "../components/UserProfileCard";
+import { getImageUrl } from "../utils/imageHelper";
 
 const MyMerchantProfile = () => {
 
@@ -93,7 +94,7 @@ const MyMerchantProfile = () => {
             >
               <div className="flex size-16 rounded-2xl bg-monday-background items-center justify-center overflow-hidden">
                 <img
-                  src={merchant.photo}
+                  src={getImageUrl(merchant.photo)}
                   className="size-full object-contain"
                   alt="icon"
                 />
@@ -163,7 +164,7 @@ const MyMerchantProfile = () => {
                           <div className="flex items-center gap-3 w-[340px] shrink-0">
                             <div className="flex size-[86px] rounded-2xl bg-monday-background items-center justify-center overflow-hidden">
                               <img
-                                src={product.thumbnail}
+                                src={getImageUrl(product.thumbnail)}
                                 className="size-full object-contain"
                                 alt="icon"
                               />
@@ -257,7 +258,7 @@ const MyMerchantProfile = () => {
                 <div className="flex flex-col gap-2">
                   <p className="flex items-center gap-[6px] font-semibold text-lg">
                     <img
-                      src={selectedProduct.category.photo}
+                      src={getImageUrl(selectedProduct.category.photo)}
                       className="size-6 flex shrink-0"
                       alt="icon"
                     />
@@ -272,7 +273,7 @@ const MyMerchantProfile = () => {
                 </div>
                 <div className="flex size-[100px] rounded-2xl bg-monday-gray-background items-center justify-center overflow-hidden">
                   <img
-                    src={selectedProduct.thumbnail}
+                    src={getImageUrl(selectedProduct.thumbnail)}
                     className="size-full object-contain"
                     alt="icon"
                   />

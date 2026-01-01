@@ -8,6 +8,7 @@ import { CategoryFormData, categorySchema } from "../../schemas/categorySchema";
 import { AxiosError } from "axios";
 import { ApiErrorResponse } from "../../types/types"; 
 import UserProfileCard from "../../components/UserProfileCard";
+import { getImageUrl } from "../../utils/imageHelper";
 
 const EditCategory = () => {
   const { id } = useParams<{ id: string }>();
@@ -39,7 +40,7 @@ const EditCategory = () => {
 
        
       if (category.photo) {
-        setImagePreview(category.photo);  
+        setImagePreview(getImageUrl(category.photo));  
       }
     }
   }, [category, setValue]);
